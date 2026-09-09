@@ -47,8 +47,12 @@ app.get('/destinos', async (req, res) => {
 app.get('/pacotes', async (req, res) => {
     try {
         const pacotes = await Pacote.findAll({
-            include: Agencia
+            include: {
+                model: Agencia,
+                as: 'agencia'
+            }
         });
+
         res.render('listaPacotes', {
             pacotes: pacotes.map(pacote => pacote.toJSON())
         });
