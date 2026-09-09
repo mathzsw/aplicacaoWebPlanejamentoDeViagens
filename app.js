@@ -10,7 +10,13 @@ const {
 const app = express();
 const PORT = 3000;
 
-app.engine('handlebars', engine());
+app.engine('handlebars', engine({
+    defaultLayout: 'main',
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true
+    }
+}));
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 app.use(express.urlencoded({ extended: true }));
