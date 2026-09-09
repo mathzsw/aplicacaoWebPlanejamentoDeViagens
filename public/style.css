@@ -15,6 +15,22 @@ main {
     margin: 0 auto;
 }
 
+h1 {
+    margin: 0 0 10px;
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: normal;
+}
+
+a {
+    color: #38727d;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* HOME */
 
 .hero {
@@ -95,24 +111,37 @@ main {
     flex-wrap: wrap;
 }
 
-
 /* LISTAS */
 
-.lista {
+.lista,
+body > h1,
+body > ul,
+body > a {
     max-width: 800px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.lista h1,
-.cadastro h1 {
-    margin-bottom: 8px;
-    font-size: 38px;
-    font-weight: normal;
+body > h1 {
+    margin-top: 15px;
 }
 
-.subtitulo {
-    margin-bottom: 30px;
-    color: #68777b;
+body > ul {
+    padding: 0;
+    list-style: none;
+}
+
+body > ul li {
+    margin-bottom: 12px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #dfe6e8;
+    border-radius: 9px;
+    line-height: 1.6;
+}
+
+body > ul li strong {
+    color: #24343b;
 }
 
 .lista-topo {
@@ -122,7 +151,17 @@ main {
     margin-bottom: 25px;
 }
 
-.lista-topo a {
+.lista h1 {
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    margin: 0 0 30px;
+    color: #68777b;
+}
+
+.lista-topo a,
+body > a:first-of-type[href*="cadastrar"] {
     padding: 10px 16px;
     background: #38727d;
     color: white;
@@ -130,8 +169,10 @@ main {
     text-decoration: none;
 }
 
-.lista-topo a:hover {
+.lista-topo a:hover,
+body > a:first-of-type[href*="cadastrar"]:hover {
     background: #2f6069;
+    text-decoration: none;
 }
 
 .item {
@@ -161,34 +202,44 @@ main {
     color: #68777b;
 }
 
+.voltar {
+    display: inline-block;
+    margin-top: 20px;
+}
 
-/* CADASTRO */
+/* CADASTROS */
 
 .cadastro {
     max-width: 600px;
     margin: 0 auto;
 }
 
-.formulario {
-    background: white;
+form {
+    max-width: 600px;
     padding: 30px;
+    background: white;
     border: 1px solid #dfe6e8;
     border-radius: 10px;
 }
 
+.cadastro .formulario {
+    max-width: 600px;
+}
+
+form div,
 .campo {
     margin-bottom: 20px;
 }
 
-.campo label {
+label {
     display: block;
     margin-bottom: 7px;
     font-size: 16px;
 }
 
-.campo input,
-.campo select,
-.campo textarea {
+input,
+select,
+textarea {
     width: 100%;
     padding: 11px 12px;
     border: 1px solid #ccd5d8;
@@ -199,22 +250,23 @@ main {
     font-size: 16px;
 }
 
-.campo textarea {
+select[multiple] {
+    min-height: 120px;
+}
+
+textarea {
     min-height: 100px;
     resize: vertical;
 }
 
-.campo select[multiple] {
-    min-height: 120px;
-}
-
+form p,
 .ajuda {
     margin-top: 7px;
     color: #7a8588;
     font-size: 14px;
 }
 
-.formulario button {
+button {
     padding: 11px 20px;
     border: none;
     border-radius: 6px;
@@ -225,21 +277,9 @@ main {
     cursor: pointer;
 }
 
-.formulario button:hover {
+button:hover {
     background: #2f6069;
 }
-
-.voltar {
-    display: inline-block;
-    margin-top: 20px;
-    color: #38727d;
-    text-decoration: none;
-}
-
-.voltar:hover {
-    text-decoration: underline;
-}
-
 
 @media (max-width: 700px) {
     .opcoes {
