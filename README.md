@@ -1,7 +1,7 @@
 # Atividade - Associações
 
-**Professor:** Eric de Luna Sales
-**Aluno:** Matheus Augusto
+**Professor:** Eric de Luna Sales / 
+**Aluno:** Matheus Augusto / 
 **Sistema:** Viagens
 
 ## Sistema
