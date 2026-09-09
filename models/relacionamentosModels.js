@@ -1,27 +1,30 @@
+const sequelize = require('../db');
+
 const Agencia = require('./Agencia');
-const Pacote = require('./Pacote');
 const Destino = require('./Destino');
+const Pacote = require('./Pacote');
 
 Agencia.hasMany(Pacote, {
-    foreignKey: 'agenciaId' 
+    foreignKey: 'agenciaId'
 });
 
-Pacote.belongsTo(Agencia, { 
-    foreignKey: 'agenciaId' 
+Pacote.belongsTo(Agencia, {
+    foreignKey: 'agenciaId'
 });
 
-Pacote.belongsToMany(Destino, { 
-    through: 'PacoteDestino', 
-    foreignKey: 'pacoteId' 
+Agencia.belongsToMany(Destino, {
+    through: 'AgenciaDestinos',
+    foreignKey: 'agenciaId'
 });
 
-Destino.belongsToMany(Pacote, { 
-    through: 'PacoteDestino', 
-    foreignKey: 'destinoId' 
+Destino.belongsToMany(Agencia, {
+    through: 'AgenciaDestinos',
+    foreignKey: 'destinoId'
 });
 
 module.exports = {
+    sequelize,
     Agencia,
-    Pacote,
-    Destino
+    Destino,
+    Pacote
 };

@@ -1,20 +1,23 @@
 const express = require('express');
 const { engine } = require('express-handlebars');
-const sequelize = require('./db');
-const Pacote = require('../models/Pacote');
-const Destino = require('./models/Destino');
-const Agencia = require('./models/Agencia');require('./models/relacionamentosModels');
+const {
+    sequelize,
+    Agencia,
+    Destino,
+    Pacote
+} = require('./models/relacionamentosModels');
+
+const app = express(); 
+const PORT = 3000;
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 app.use(express.urlencoded({ extended: true }));
 
-
-
-
-
-
+app.get('/', (req, res) => { 
+    res.render('home'); 
+});
 
 sequelize.sync()
   .then(() => {
