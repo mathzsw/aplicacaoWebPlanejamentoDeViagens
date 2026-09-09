@@ -1,4 +1,4 @@
-# Atividade - Associações
+# PLANEJATRIP - Atividade Associações
 
 **Professor:** Eric de Luna Sales / 
 **Aluno:** Matheus Augusto / 
