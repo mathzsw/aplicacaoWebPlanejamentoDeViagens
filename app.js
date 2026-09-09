@@ -65,7 +65,9 @@ app.get('/pacotes', async (req, res) => {
 app.get('/agencias/cadastrar', async (req, res) => {
     try {
         const destinos = await Destino.findAll();
-        res.render('cadastrarAgencia', { destinos });
+        res.render('cadastrarAgencia', {
+            destinos: destinos.map(destino => destino.toJSON())
+        });
     } catch (erro) {
         console.error(erro);
         res.status(500).send('Erro ao carregar a página de cadastro de Agência.');
@@ -107,7 +109,9 @@ app.post('/destinos/cadastrar', async (req, res) => {
 app.get('/pacotes/cadastrar', async (req, res) => {
     try {
         const agencias = await Agencia.findAll();
-        res.render('cadastrarPacote', { agencias });
+        res.render('cadastrarPacote', {
+            agencias: agencias.map(agencia => agencia.toJSON())
+        });
     } catch (erro) {
         console.error(erro);
         res.status(500).send('Erro ao carregar a página de cadastro de Pacote.');
