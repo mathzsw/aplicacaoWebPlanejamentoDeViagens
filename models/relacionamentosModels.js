@@ -5,21 +5,25 @@ const Destino = require('./Destino');
 const Pacote = require('./Pacote');
 
 Agencia.hasMany(Pacote, {
-    foreignKey: 'agenciaId'
+    foreignKey: 'agenciaId',
+    as: 'pacotes'
 });
 
 Pacote.belongsTo(Agencia, {
-    foreignKey: 'agenciaId'
+    foreignKey: 'agenciaId',
+    as: 'agencia'
 });
 
 Agencia.belongsToMany(Destino, {
     through: 'AgenciaDestinos',
-    foreignKey: 'agenciaId'
+    foreignKey: 'agenciaId',
+    as: 'destinos'
 });
 
 Destino.belongsToMany(Agencia, {
     through: 'AgenciaDestinos',
-    foreignKey: 'destinoId'
+    foreignKey: 'destinoId',
+    as: 'agencias'
 });
 
 module.exports = {
