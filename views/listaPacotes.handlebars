@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Pacotes</title>
+</head>
+<body>
+
+  <h1>Lista de Pacotes</h1>
+
+  <a href="/pacotes/cadastrar">Cadastrar Pacote</a>
+
+  <ul>
+    {{#each pacotes}}
+      <li>
+        <strong>Nome:</strong> {{nome}}<br>
+        <strong>Descrição:</strong> {{descricao}}<br>
+        <strong>Preço:</strong> R$ {{preco}}<br>
+        <strong>Agência:</strong> {{Agencium.nome}}
+      </li>
+    {{/each}}
+  </ul>
+
+  <a href="/">Voltar para a página inicial</a>
+
+</body>
+</html>
