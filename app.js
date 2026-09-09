@@ -10,9 +10,7 @@ const {
 const app = express();
 const PORT = 3000;
 
-app.engine('handlebars', engine({
-    defaultLayout: false
-}));
+app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +23,6 @@ app.get('/', (req, res) => {
 app.get('/agencias', async (req, res) => {
     try {
         const agencias = await Agencia.findAll();
-
         res.render('listaAgencias', {
             agencias: agencias.map(agencia => agencia.toJSON())
         });
@@ -38,7 +35,6 @@ app.get('/agencias', async (req, res) => {
 app.get('/destinos', async (req, res) => {
     try {
         const destinos = await Destino.findAll();
-
         res.render('listaDestinos', {
             destinos: destinos.map(destino => destino.toJSON())
         });
@@ -53,7 +49,6 @@ app.get('/pacotes', async (req, res) => {
         const pacotes = await Pacote.findAll({
             include: Agencia
         });
-
         res.render('listaPacotes', {
             pacotes: pacotes.map(pacote => pacote.toJSON())
         });
@@ -76,11 +71,7 @@ app.get('/agencias/cadastrar', async (req, res) => {
 app.post('/agencias/cadastrar', async (req, res) => {
     try {
         const { nome, cnpj, destinosIds } = req.body;
-
-        const agencia = await Agencia.create({
-            nome,
-            cnpj
-        });
+        const agencia = await Agencia.create({ nome, cnpj });
 
         if (destinosIds) {
             const ids = Array.isArray(destinosIds) ? destinosIds : [destinosIds];
@@ -101,12 +92,7 @@ app.get('/destinos/cadastrar', (req, res) => {
 app.post('/destinos/cadastrar', async (req, res) => {
     try {
         const { nome, pais } = req.body;
-
-        await Destino.create({
-            nome,
-            pais
-        });
-
+        await Destino.create({ nome, pais });
         res.redirect('/destinos');
     } catch (erro) {
         console.error(erro);
@@ -127,14 +113,7 @@ app.get('/pacotes/cadastrar', async (req, res) => {
 app.post('/pacotes/cadastrar', async (req, res) => {
     try {
         const { nome, descricao, preco, agenciaId } = req.body;
-
-        await Pacote.create({
-            nome,
-            descricao,
-            preco,
-            agenciaId
-        });
-
+        await Pacote.create({ nome, descricao, preco, agenciaId });
         res.redirect('/pacotes');
     } catch (erro) {
         console.error(erro);
