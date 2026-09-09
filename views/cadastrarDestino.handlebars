@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Cadastrar Destino</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <h1>Cadastrar Destino</h1>
-  
-  <form action="/destinos/cadastrar" method="POST">
-    <div>
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
-    </div>
+<section class="cadastro">
+    <h1>Cadastrar destino</h1>
+    <p class="subtitulo">Adicione um novo destino para suas viagens.</p>
 
-    <div>
-      <label for="pais">País:</label>
-      <input type="text" id="pais" name="pais" required>
-    </div>
+    <form class="formulario" action="/destinos/cadastrar" method="POST">
+        <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
 
-    <button type="submit">Cadastrar Destino</button>
-  </form>
-    <a href="/">Voltar para a página inicial</a>
-</body>
-</html>
+        <div class="campo">
+            <label for="pais">País</label>
+            <input type="text" id="pais" name="pais" required>
+        </div>
+
+        <button type="submit">Cadastrar destino</button>
+    </form>
+
+    <a class="voltar" href="/">← Voltar para início</a>
+</section>
