@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Lista de Destinos</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+<section class="pagina">
+    <div class="pagina-cabecalho">
+        <div>
+            <h1>Destinos</h1>
+            <p class="subtitulo">Destinos disponíveis para suas viagens.</p>
+        </div>
+        <a class="botao-principal" href="/destinos/cadastrar">+ Cadastrar destino</a>
+    </div>
 
-  <h1>Lista de Destinos</h1>
-
-  <a href="/destinos/cadastrar">Cadastrar Destino</a>
-
-  <ul>
     {{#each destinos}}
-      <li>
-        <strong>Nome:</strong> {{nome}}<br>
-        <strong>País:</strong> {{pais}}<br>
-      </li>
+        <div class="item">
+            <h2>{{nome}}</h2>
+            <p><strong>País:</strong> {{pais}}</p>
+        </div>
     {{/each}}
-  </ul>
 
-  <a href="/">Voltar para a página inicial</a>
-
-</body>
-</html>
+    <a class="voltar" href="/">← Voltar para início</a>
+</section>
