@@ -1,41 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Cadastrar Pacote</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <h1>Cadastrar Pacote</h1>
+<section class="cadastro">
+    <h1>Cadastrar pacote</h1>
+    <p class="subtitulo">Crie um pacote e vincule-o a uma agência.</p>
 
-  <form action="/pacotes/cadastrar" method="POST">
-    <div>
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
-    </div>
+    <form class="formulario" action="/pacotes/cadastrar" method="POST">
+        <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
 
-    <div>
-      <label for="descricao">Descrição:</label>
-      <input type="text" id="descricao" name="descricao" required>
-    </div>
+        <div class="campo">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" required></textarea>
+        </div>
 
-    <div>
-      <label for="preco">Preço:</label>
-      <input type="number" id="preco" name="preco" step="0.01" required>
-    </div>
+        <div class="campo">
+            <label for="preco">Preço</label>
+            <input type="number" id="preco" name="preco" step="0.01" min="0" required>
+        </div>
 
-    <div>
-      <label for="agenciaId">Agência:</label>
-      <select id="agenciaId" name="agenciaId" required> 
-        <option value="">Selecione uma agência</option>
-        {{#each agencias}}
-          <option value="{{id}}">{{nome}}</option>
-        {{/each}}
-      </select>
-    </div>
+        <div class="campo">
+            <label for="agenciaId">Agência</label>
+            <select id="agenciaId" name="agenciaId" required>
+                <option value="">Selecione uma agência</option>
+                {{#each agencias}}
+                    <option value="{{id}}">{{nome}}</option>
+                {{/each}}
+            </select>
+        </div>
 
-    <button type="submit">Cadastrar Pacote</button>
-  </form>
-    <a href="/">Voltar para a página inicial</a>
-</body>
-</html>
+        <button type="submit">Cadastrar pacote</button>
+    </form>
+
+    <a class="voltar" href="/">← Voltar para início</a>
+</section>
