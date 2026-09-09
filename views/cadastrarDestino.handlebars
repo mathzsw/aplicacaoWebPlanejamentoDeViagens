@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Destino</title>
+</head>
+<body>
+  <h1>Cadastrar Destino</h1>
+  
+  <form action="/destinos/cadastrar" method="POST">
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+
+    <div>
+      <label for="pais">País:</label>
+      <input type="text" id="pais" name="pais" required>
+    </div>
+
+    <button type="submit">Cadastrar Destino</button>
+  </form>
+    <a href="/home">Voltar para a página inicial</a>
+</body>
+</html>

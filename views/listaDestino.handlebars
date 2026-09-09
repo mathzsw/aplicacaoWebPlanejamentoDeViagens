@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Destinos</title>
+</head>
+<body>
+
+  <h1>Lista de Destinos</h1>
+
+  <a href="/destinos/cadastrar">Cadastrar Agência</a>
+
+  <ul>
+    {{#each destinos}}
+      <li>
+        <strong>Nome:</strong> {{nome}}<br>
+        <strong>País:</strong> {{pais}}<br>
+      </li>
+    {{/each}}
+  </ul>
+
+  <a href="/">Voltar para a página inicial</a>
+
+</body>
+</html>
+
