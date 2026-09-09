@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Lista de Agências</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+<section class="pagina">
+    <div class="pagina-cabecalho">
+        <div>
+            <h1>Agências</h1>
+            <p class="subtitulo">Agências cadastradas para o planejamento de viagens.</p>
+        </div>
+        <a class="botao-principal" href="/agencias/cadastrar">+ Cadastrar agência</a>
+    </div>
 
-  <h1>Lista de Agências</h1>
-
-  <a href="/agencias/cadastrar">Cadastrar Agência</a>
-
-  <ul>
     {{#each agencias}}
-      <li>
-        <strong>Nome:</strong> {{nome}}<br>
-        <strong>CNPJ:</strong> {{cnpj}}<br>
-      </li>
+        <div class="item">
+            <h2>{{nome}}</h2>
+            <p><strong>CNPJ:</strong> {{cnpj}}</p>
+        </div>
     {{/each}}
-  </ul>
 
-  <a href="/">Voltar para a página inicial</a>
-
-</body>
-</html>
+    <a class="voltar" href="/">← Voltar para início</a>
+</section>
