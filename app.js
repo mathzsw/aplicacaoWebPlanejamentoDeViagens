@@ -14,6 +14,7 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => { 
     res.render('home'); 
@@ -22,7 +23,10 @@ app.get('/', (req, res) => {
 app.get('/agencias', async (req, res) => {
   try {
     const agencias = await Agencia.findAll();
-    res.render('listaAgencias', { agencias });
+
+    res.render('listaAgencias', {
+      agencias: agencias.map(agencia => agencia.toJSON())
+    });
   } catch (erro) {
     console.error(erro);
     res.status(500).send('Erro ao listar Agências.');
@@ -32,7 +36,10 @@ app.get('/agencias', async (req, res) => {
 app.get('/destinos', async (req, res) => {
   try {
     const destinos = await Destino.findAll();
-    res.render('listaDestinos', { destinos });
+
+    res.render('listaDestinos', {
+      destinos: destinos.map(destino => destino.toJSON())
+    });
   } catch (erro) {
     console.error(erro);
     res.status(500).send('Erro ao listar Destinos.');
@@ -44,7 +51,10 @@ app.get('/pacotes', async (req, res) => {
     const pacotes = await Pacote.findAll({
       include: Agencia
     });
-    res.render('listaPacotes', { pacotes });
+
+    res.render('listaPacotes', {
+      pacotes: pacotes.map(pacote => pacote.toJSON())
+    });
   } catch (erro) {
     console.error(erro);
     res.status(500).send('Erro ao listar Pacotes.');

@@ -1,21 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-</head>
-<body>
-  <h1>Home</h1>
-  <p>Bem-vindo à nossa aplicação!</p>
-  <br>
-  <p>Escolha uma das opções abaixo:</p>
-  <a href="/agencias">Lista de Agências</a><br>
-  <a href="/pacotes">Lista de Pacotes</a><br>
-  <a href="/destinos">Lista de Destinos</a><br>
 
-  <a href="/agencias/cadastrar">Cadastrar Agência</a><br>
-  <a href="/pacotes/cadastrar">Cadastrar Pacote</a><br>
-  <a href="/destinos/cadastrar">Cadastrar Destino</a><br>
-  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlanejaTrip</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <main>
+
+        <section class="hero">
+            <p class="marca">PLANEJATRIP</p>
+            <h1>Seu próximo destino<br>começa aqui.</h1>
+            <p>
+                Organize agências, destinos e pacotes
+                para tornar sua viagem mais fácil.
+            </p>
+        </section>
+
+        <section class="opcoes">
+
+            <div class="card">
+                <span>✈</span>
+                <h2>Agências</h2>
+                <p>Encontre e cadastre agências de viagem.</p>
+                <a href="/agencias">Ver agências →</a>
+            </div>
+
+            <div class="card">
+                <span>📍</span>
+                <h2>Destinos</h2>
+                <p>Explore os destinos disponíveis.</p>
+                <a href="/destinos">Ver destinos →</a>
+            </div>
+
+            <div class="card">
+                <span>🧳</span>
+                <h2>Pacotes</h2>
+                <p>Confira os pacotes preparados para sua viagem.</p>
+                <a href="/pacotes">Ver pacotes →</a>
+            </div>
+
+        </section>
+
+        <section class="cadastros">
+            <a href="/agencias/cadastrar">+ Cadastrar agência</a>
+            <a href="/destinos/cadastrar">+ Cadastrar destino</a>
+            <a href="/pacotes/cadastrar">+ Cadastrar pacote</a>
+        </section>
+
+    </main>
+
 </body>
 </html>
